@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoShopee Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="eyebrow">Prototype</span>
+            <h1>GoShopee</h1>
+            <p>Customer onboarding and merchant operations click-through.</p>
+        </div>
+
+        <nav class="nav">
+            <button class="nav-item active" data-screen="customer-signup">Customer Signup</button>
+            <button class="nav-item" data-screen="customer-discovery">Nearby Merchants</button>
+            <button class="nav-item" data-screen="customer-offers">Nearby Offers</button>
+            <button class="nav-item" data-screen="merchant-onboarding">Merchant Onboarding</button>
+            <button class="nav-item" data-screen="merchant-branches">Branches</button>
+            <button class="nav-item" data-screen="merchant-users">Merchant Users</button>
+            <button class="nav-item" data-screen="merchant-banking">Bank Accounts</button>
+            <button class="nav-item" data-screen="merchant-offers">Offers</button>
+            <button class="nav-item" data-screen="merchant-package">Merchant Packages</button>
+        </nav>
+    </aside>
+
+    <main class="workspace">
+        <header class="hero">
+            <div>
+                <span class="eyebrow">Flow Preview</span>
+                <h2 id="screen-title">Customer Signup</h2>
+                <p id="screen-subtitle">Basic signup captures city for fallback and location later for nearby discovery.</p>
+            </div>
+            <div class="hero-card">
+                <span class="eyebrow">Current Concept</span>
+                <strong>Branch-led discovery, merchant package limits, and separate assignment flows.</strong>
+            </div>
+        </header>
+
+        <section class="screen active" id="customer-signup">
+            <div class="signup-flow">
+                <div class="phone-frame">
+                    <div class="phone-header">
+                        <span>9:41</span>
+                        <span>GoShopee</span>
+                    </div>
+                    <div class="phone-body">
+                        <span class="eyebrow">Step 1 of 2</span>
+                        <h3>Create your account</h3>
+                        <p>Collect stable profile fields up front. GPS comes later and stays optional.</p>
+                        <div class="form-grid">
+                            <label><span>Name</span><input value="Anita Rao" readonly></label>
+                            <label><span>Phone</span><input value="9876543210" readonly></label>
+                            <label><span>Gender</span><input value="Female" readonly></label>
+                            <label><span>Date of Birth</span><input value="1998-04-18" readonly></label>
+                            <label><span>City</span><input value="Bengaluru" readonly></label>
+                            <label><span>Referral Mode</span><input value="Outlet walk-in" readonly></label>
+                        </div>
+                        <div class="action-row">
+                            <button class="primary">Continue to Merchant Link</button>
+                            <button class="ghost">Login Instead</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phone-frame">
+                    <div class="phone-header">
+                        <span>9:42</span>
+                        <span>GoShopee</span>
+                    </div>
+                    <div class="phone-body">
+                        <span class="eyebrow">Step 2 of 2</span>
+                        <h3>Link to parent merchant</h3>
+                        <p>Scan outlet QR or choose a nearby outlet manually so the customer is attached to the right merchant.</p>
+                        <div class="scan-card">
+                            <div class="scan-box">QR Scan Frame</div>
+                            <button class="primary full">Scan Merchant Outlet</button>
+                        </div>
+                        <div class="selection-card">
+                            <strong>Detected Merchant</strong>
+                            <p>FreshCart</p>
+                            <small>Branch: Koramangala Outlet</small>
+                        </div>
+                        <div class="selection-list">
+                            <div class="assignment selected">FreshCart - Koramangala Outlet</div>
+                            <div class="assignment">FreshCart - HSR Outlet</div>
+                            <div class="assignment">Skip for now</div>
+                        </div>
+                        <div class="action-row">
+                            <button class="primary">Complete Signup</button>
+                            <button class="ghost">Select Manually</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes">
+                <div class="info-card">
+                    <h4>Why city stays</h4>
+                    <p>Fallback discovery when location permission is denied and for coarse grouping.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Why location is later</h4>
+                    <p>Better conversion. Ask only after signup with a clear nearby-merchants benefit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="customer-discovery">
+            <div class="phone-frame app-screen">
+                <div class="phone-header">
+                    <span>9:43</span>
+                    <span>GoShopee</span>
+                </div>
+                <div class="phone-body">
+                    <div class="mobile-topbar">
+                        <div>
+                            <span class="eyebrow">Customer App</span>
+                            <h3>Nearby Merchants</h3>
+                        </div>
+                        <div class="pill success">Live GPS</div>
+                    </div>
+                    <div class="mobile-toolbar">
+                        <div class="chip">Radius: 5 km</div>
+                        <div class="chip">Nearest branch basis</div>
+                    </div>
+                    <div class="map-strip">Map Preview</div>
+                    <div class="mobile-list">
+                        <article class="mobile-result-card">
+                            <div class="mobile-result-head">
+                                <h4>FreshCart</h4>
+                                <div class="distance">0.8 km</div>
+                            </div>
+                            <p>Koramangala Outlet</p>
+                            <small>80 Feet Road, Bengaluru</small>
+                        </article>
+                        <article class="mobile-result-card">
+                            <div class="mobile-result-head">
+                                <h4>Daily Deli</h4>
+                                <div class="distance">1.9 km</div>
+                            </div>
+                            <p>Indiranagar Express</p>
+                            <small>CMH Road, Bengaluru</small>
+                        </article>
+                        <article class="mobile-result-card">
+                            <div class="mobile-result-head">
+                                <h4>South Bowl</h4>
+                                <div class="distance">3.4 km</div>
+                            </div>
+                            <p>Ejipura Kitchen</p>
+                            <small>Ejipura Main Road, Bengaluru</small>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="customer-offers">
+            <div class="phone-frame app-screen">
+                <div class="phone-header">
+                    <span>9:44</span>
+                    <span>GoShopee</span>
+                </div>
+                <div class="phone-body">
+                    <div class="mobile-topbar">
+                        <div>
+                            <span class="eyebrow">Customer App</span>
+                            <h3>Nearby Offers</h3>
+                        </div>
+                        <div class="pill success">Valid Now</div>
+                    </div>
+                    <div class="mobile-toolbar">
+                        <div class="chip">Nearby branches only</div>
+                        <div class="chip">Sorted by distance</div>
+                    </div>
+                    <div class="mobile-list">
+                        <article class="mobile-offer-card">
+                            <strong>Weekend Special 10% Off</strong>
+                            <p>FreshCart · Koramangala Outlet</p>
+                            <small>Min order Rs. 299 | Max discount Rs. 100</small>
+                            <div class="offer-footer">
+                                <div class="distance">0.8 km</div>
+                                <div class="pill">Valid till 30 Apr</div>
+                            </div>
+                        </article>
+                        <article class="mobile-offer-card">
+                            <strong>Rs. 75 Off Lunch Combo</strong>
+                            <p>South Bowl · Ejipura Kitchen</p>
+                            <small>Value offer | Branch exclusive</small>
+                            <div class="offer-footer">
+                                <div class="distance">3.4 km</div>
+                                <div class="pill">Valid till 28 Apr</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-onboarding">
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="eyebrow">Admin / Sales Ops</span>
+                        <h3>Merchant Onboarding</h3>
+                    </div>
+                    <div class="pill">Separate identity, package, status, and business category</div>
+                </div>
+                <div class="form-grid">
+                    <label><span>Owner User</span><input value="Ravi Kumar" readonly></label>
+                    <label><span>Merchant Package</span><input value="Standard" readonly></label>
+                    <label><span>Business Category</span><input value="Restaurant" readonly></label>
+                    <label><span>Business Subcategory</span><input value="South Indian" readonly></label>
+                    <label><span>Business Name</span><input value="Aroma Meals" readonly></label>
+                    <label><span>Primary Address</span><input value="12 Main Road, Bengaluru" readonly></label>
+                    <label><span>GST</span><input value="29ABCDE1234F1Z5" readonly></label>
+                    <label><span>Status</span><input value="ACTIVE" readonly></label>
+                </div>
+                <div class="action-row">
+                    <button class="primary">Create Merchant</button>
+                    <button class="ghost">Save Draft</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-branches">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Merchant Admin</span>
+                            <h3>Branch Limit</h3>
+                        </div>
+                        <div class="pill warning">Standard: 3 of 5 branches used</div>
+                    </div>
+                    <div class="stack">
+                        <article class="branch-line">
+                            <strong>Koramangala Outlet</strong>
+                            <span>Bank: HDFC Settlement 01</span>
+                        </article>
+                        <article class="branch-line">
+                            <strong>Indiranagar Outlet</strong>
+                            <span>Bank: HDFC Settlement 01</span>
+                        </article>
+                        <article class="branch-line">
+                            <strong>HSR Outlet</strong>
+                            <span>Bank: ICICI Branch Ops</span>
+                        </article>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Create Branch</span>
+                            <h3>Separate from Banking</h3>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Branch Name</span><input value="Bellandur Outlet" readonly></label>
+                        <label><span>Phone</span><input value="9988776655" readonly></label>
+                        <label><span>Address</span><input value="ORR Service Road" readonly></label>
+                        <label><span>City</span><input value="Bengaluru" readonly></label>
+                        <label><span>Branch Manager</span><input value="Sneha Ops" readonly></label>
+                        <label><span>Manager Role</span><input value="BRANCH_MANAGER" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Create Branch</button>
+                        <button class="ghost">Assign Bank Later</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-users">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Merchant Team</span>
+                            <h3>Create User</h3>
+                        </div>
+                        <div class="pill">Merchant-owned, branch assignment later</div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Name</span><input value="Sneha Ops" readonly></label>
+                        <label><span>Email</span><input value="sneha@aromameals.com" readonly></label>
+                        <label><span>Phone</span><input value="9000012345" readonly></label>
+                        <label><span>Role</span><input value="BRANCH_MANAGER" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Create Merchant User</button>
+                        <button class="ghost">Quick Create for Bellandur Branch</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Branch Assignment</span>
+                            <h3>Sneha Ops</h3>
+                        </div>
+                    </div>
+                    <div class="assignment-list">
+                        <div class="assignment selected">Koramangala Outlet</div>
+                        <div class="assignment selected">HSR Outlet</div>
+                        <div class="assignment">Bellandur Outlet</div>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Assign Selected</button>
+                        <button class="ghost">Remove Access</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-banking">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Merchant Banking</span>
+                            <h3>Create Bank Account</h3>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Bank Name</span><input value="HDFC Bank" readonly></label>
+                        <label><span>Account Holder</span><input value="Aroma Meals Pvt Ltd" readonly></label>
+                        <label><span>Account Number</span><input value="XXXXXX2391" readonly></label>
+                        <label><span>Type</span><input value="Current Account" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Save Bank Account</button>
+                        <button class="ghost">Quick Create for Bellandur Branch</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Assign to Branches</span>
+                            <h3>HDFC Settlement 01</h3>
+                        </div>
+                    </div>
+                    <div class="assignment-list">
+                        <div class="assignment selected">Koramangala Outlet</div>
+                        <div class="assignment selected">Indiranagar Outlet</div>
+                        <div class="assignment">HSR Outlet</div>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Update Branch Mapping</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-offers">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Merchant Promotions</span>
+                            <h3>Create Offer</h3>
+                        </div>
+                        <div class="pill">Merchant-owned, branches assigned later</div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Offer Name</span><input value="Weekend Special" readonly></label>
+                        <label><span>Offer Type</span><input value="PERCENTAGE" readonly></label>
+                        <label><span>Discount</span><input value="10%" readonly></label>
+                        <label><span>Min Order</span><input value="Rs. 299" readonly></label>
+                        <label><span>Max Discount</span><input value="Rs. 100" readonly></label>
+                        <label><span>Valid Until</span><input value="2026-04-30" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Create Offer</button>
+                        <button class="ghost">Quick Create for Bellandur Branch</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Offer Assignment</span>
+                            <h3>Weekend Special</h3>
+                        </div>
+                    </div>
+                    <div class="assignment-list">
+                        <div class="assignment selected">Koramangala Outlet</div>
+                        <div class="assignment selected">Indiranagar Outlet</div>
+                        <div class="assignment">Bellandur Outlet</div>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Assign to Selected Branches</button>
+                        <button class="ghost">Remove from Branch</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-package">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Backend Config</span>
+                            <h3>Package Definition</h3>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Package Name</span><input value="Standard" readonly></label>
+                        <label><span>Max Branches</span><input value="5" readonly></label>
+                        <label><span>Max Parent Customers</span><input value="100" readonly></label>
+                        <label><span>Description</span><input value="Entry package for small merchants" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Save Package</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Enforcement</span>
+                            <h3>Operational Impact</h3>
+                        </div>
+                    </div>
+                    <ul class="rule-list">
+                        <li>Branch create blocks after limit is reached.</li>
+                        <li>Customer signup with `parentMerchantId` blocks after parent-customer limit is reached.</li>
+                        <li>Limits stay configurable from backend package master data.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
