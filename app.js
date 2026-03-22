@@ -11,6 +11,10 @@ const screens = {
         title: "Nearby Offers",
         subtitle: "Offers are discovered from active nearby branches and respect branch assignment plus validity."
     },
+    "customer-wallets": {
+        title: "Loyalty Wallets",
+        subtitle: "Customers carry separate parent-merchant and Shopee wallets based on how they were linked."
+    },
     "merchant-onboarding": {
         title: "Merchant Onboarding",
         subtitle: "Merchant setup links business category, status, package, and owner identity."
@@ -30,6 +34,10 @@ const screens = {
     "merchant-offers": {
         title: "Offers",
         subtitle: "Offers are merchant-owned, branch-assigned, and support branch-level quick creation with auto-assignment."
+    },
+    "merchant-loyalty": {
+        title: "Loyalty Config",
+        subtitle: "Each merchant defines separate loyalty earning rates for direct customers and Shopee customers."
     },
     "merchant-package": {
         title: "Merchant Packages",

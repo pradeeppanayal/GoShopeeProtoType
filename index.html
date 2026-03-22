@@ -17,6 +17,7 @@
 
         <nav class="nav">
             <button class="nav-item active" data-screen="customer-signup">Customer Signup</button>
+            <button class="nav-item" data-screen="customer-wallets">Loyalty Wallets</button>
             <button class="nav-item" data-screen="customer-discovery">Nearby Merchants</button>
             <button class="nav-item" data-screen="customer-offers">Nearby Offers</button>
             <button class="nav-item" data-screen="merchant-onboarding">Merchant Onboarding</button>
@@ -24,6 +25,7 @@
             <button class="nav-item" data-screen="merchant-users">Merchant Users</button>
             <button class="nav-item" data-screen="merchant-banking">Bank Accounts</button>
             <button class="nav-item" data-screen="merchant-offers">Offers</button>
+            <button class="nav-item" data-screen="merchant-loyalty">Loyalty Config</button>
             <button class="nav-item" data-screen="merchant-package">Merchant Packages</button>
         </nav>
     </aside>
@@ -195,6 +197,38 @@
                                 <div class="distance">3.4 km</div>
                                 <div class="pill">Valid till 28 Apr</div>
                             </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="customer-wallets">
+            <div class="phone-frame app-screen">
+                <div class="phone-header">
+                    <span>9:45</span>
+                    <span>GoShopee</span>
+                </div>
+                <div class="phone-body">
+                    <div class="mobile-topbar">
+                        <div>
+                            <span class="eyebrow">Customer App</span>
+                            <h3>Loyalty Wallets</h3>
+                        </div>
+                        <div class="pill success">2 active wallets</div>
+                    </div>
+                    <div class="mobile-list">
+                        <article class="wallet-card">
+                            <span class="eyebrow">Parent Merchant Wallet</span>
+                            <h4>FreshCart Rewards</h4>
+                            <div class="wallet-balance">420 pts</div>
+                            <small>Earned from shopping with your linked parent merchant</small>
+                        </article>
+                        <article class="wallet-card alt">
+                            <span class="eyebrow">Shopee Wallet</span>
+                            <h4>Shopee Universal Points</h4>
+                            <div class="wallet-balance">115 pts</div>
+                            <small>Earned from other merchants across the network</small>
                         </article>
                     </div>
                 </div>
@@ -394,6 +428,43 @@
                         <button class="primary">Assign to Selected Branches</button>
                         <button class="ghost">Remove from Branch</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="merchant-loyalty">
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Merchant Admin</span>
+                            <h3>Loyalty Configuration</h3>
+                        </div>
+                        <div class="pill">Per merchant earning rules</div>
+                    </div>
+                    <div class="form-grid">
+                        <label><span>Direct Spend Amount</span><input value="100.00" readonly></label>
+                        <label><span>Direct Points Awarded</span><input value="5.00" readonly></label>
+                        <label><span>Shopee Spend Amount</span><input value="100.00" readonly></label>
+                        <label><span>Shopee Points Awarded</span><input value="2.00" readonly></label>
+                    </div>
+                    <div class="action-row">
+                        <button class="primary">Save Loyalty Config</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="eyebrow">Wallet Outcome</span>
+                            <h3>Customer Split</h3>
+                        </div>
+                    </div>
+                    <ul class="rule-list">
+                        <li>Customers linked from merchant outlet earn into the parent merchant wallet.</li>
+                        <li>Other Shopee customers earn into the Shopee wallet.</li>
+                        <li>Example: spend 100 and earn 5 points for direct customers.</li>
+                        <li>Both wallets are visible on customer profile after onboarding.</li>
+                    </ul>
                 </div>
             </div>
         </section>
